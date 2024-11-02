@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Shrikhand&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --sl-color-primary-hue: 10;
+  --sl-color-primary-saturation: 90%;
+}
+
+h1 {
+font-family: "Luckiest Guy", cursive;
+font-style: normal;
+}
+
+p {
+  text-align: justify;
+}
+
+#screen-1, #screen-2{
+  width: 100vw;  /*make full screen */
+  margin-top: 0px;   /*prevent content from overlaying with nav bar*/
+  display: flex;   /*display in the centre*/
+  flex-direction: column;
+  justify-content: center;
+}
+
+/***** ACKNOWLEDGEMENT OF COUNTRY *****/
+#screen-1 {
+  height: 100vh;
+  width: 100vw;
+  color: #fcffe1;
+  align-items: center;
+  text-align: center;
+  /* padding: 50px 180px; */
+  background: rgb(224,216,28);
+  background: radial-gradient(circle, rgba(224,216,28,1) 0%, rgba(180,17,17,1) 19%, rgba(0,0,0,1) 71%);
+  margin: 0;
+}
+
+#screen-1 p {
+  text-align: center;
+  margin: 0px 200px;
+}
+
+#next-button {
+  background-color: #c97e7ef3;
+  border-radius: 8px;
+  border-style: none;
+  font-size: 15px;
+  font-weight: 500;
+  height: 40px;
+  width: 80px;
+  display: inline-block;
+  color: #333333;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 50px;
+  transition: color 200ms;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+/***** SCREEN 2 & STORY *****/
+#screen-2 {
+  display: none; /*appear invisible*/
+  background-color: #fcffe1;
+}
+
+nav {
+  overflow: hidden;
+  background: #a7bc40;
+  /* height: 70px; */
+  width: 100%;
+  position: fixed;   /* nav will remain in its position */
+  top: 0; /* nav will remain at the top of webpage */
+}
+
+#header-title {
+  float: left;
+  line-height: 80px;
+  margin: 16px 16px;
+  font-size: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #E15025;
+}
+nav ul{
+  float: right;
+  list-style-type: none;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a { 
+  border-radius: 3px;
+  padding: 7px 13px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #E15025;
+}
+
+#sound-btn {
+  margin: 0px 20px 0px 0px;
+  color: #E15025;
+}
+
+nav ul li a:hover{
+  background: #c7e09e;
+  transition: .5s;
+}
+
+.animated-heading {
+  font-weight: 900;
+  font-style: normal;
+  /* position: relative; */
+  text-align: center;
+  color:rgb(12, 2, 2);
+  font-size: 60px;
+  letter-spacing: 6px;
+  margin-top: 180px;
+  animation: animate-heading 1.6s linear infinite;
+}   
+
+  @keyframes animate-heading {
+    0% {
+        color: #fdfdfd;
+        text-shadow: 0 0 10px #f7f8f8;
+        }
+    20%, 100% { color: #E15025;
+        text-shadow: 0 0 25px #5eff36, 0 0 55px #66d4ff, 0 0 105px #b769ff, 0 0 135px rgb(255, 112, 219), 0 0 160px #e4db68; /* gradually will make the headings shadow appear to expand and give a neon light effect */ 
+    }
+}
+
+h3 {
+  text-align: center;
+  color: #E15025;
+}
+
+.animation {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.snake {
+  max-height: 600px;
+  top: 500px;
+  right: 0%;
+  max-width: 600px;
+  cursor: default;
+  vertical-align: bottom;
+  object-fit: cover;   /* image will cover the container while keeping its shape */
+}
+
+/***** IMAGES *****/
+.story-picture {
+  /* padding: 50 px; */
+  /* width: 100%; */
+  max-width: 400px;
+  object-fit: cover;   /* image will cover the container while keeping its shape */
+  vertical-align: middle;
+  cursor: zoom-in;
+  transition: transform 2s ease;
+}
+
+.zoomImage {
+  position: relative;
+  place-items: center;
+  z-index: 999;
+  margin: auto;
+  display: block;
+  /* left: 120px; */
+  /* position: 50vw; */
+  padding: 0 20px;
+  margin: 0 80px;
+  transform: scale(1.8);
+  cursor: zoom-out;
+  /* border: 10px solid #fffdfd; */
+  transition: transform 2s ease-out;
+  /* justify-content: center; */
+}
+
+a {
+  text-decoration: none;
+}
+
+/***** PARAGRAPH 1 *****/
+.container-1 {
+  padding: 50px 80px;
+  display: flex;
+  flex-wrap: wrap;   /* makes image and text responsive based on screen size */
+  align-items: center;
+  justify-content: space-around;
+  gap: 5rem;
+  background-color: #fcffe1;
+}
+
+.para-1 {
+flex: 1;   /* text will use as much space within its flex container based on screen size*/
+}
+
+.image-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+/***** PARAGRAPH 2 *****/
+.container-2 {
+  padding: 50px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5rem;
+  background: rgb(255,223,223);
+background: linear-gradient(180deg, rgba(255,223,223,1) 17%, rgba(136,190,181,1) 51%, rgba(69,161,252,1) 100%);
+}
+
+.para-2 {
+  flex: 1;
+}
+
+.image-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+/***** PARAGRAPH 3 *****/
+.container-3 {
+  padding: 50px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5rem;
+  background: rgb(69,161,252);
+background: linear-gradient(0deg, rgba(69,161,252,1) 5%, rgba(136,190,181,1) 35%, rgba(167,188,64,1) 100%);
+}
+
+.para-3 {
+  flex: 1;
+}
+
+.image-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-image {
+  max-width: 400px;
+  text-align: center;
+}
+
+/* map of aus  */
+#australia-title {
+  text-align: center;
+}
+
+.st0 {
+  fill: url(#radial-gradient16);
+}
+
+.st0, .st1, .st2, .st3, .st4, .st5, .st6, .st7, .st8, .st9, .st10, .st11, .st12, .st13, .st14, .st15, .st16, .st17, .st18 {
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5px;
+}
+
+.st1 {
+  fill: url(#radial-gradient9);
+}
+
+.st2 {
+  fill: url(#radial-gradient6);
+}
+
+.st3 {
+  fill: url(#radial-gradient4);
+}
+
+.st4 {
+  fill: url(#radial-gradient5);
+}
+
+.st5 {
+  fill: url(#radial-gradient13);
+}
+
+.st6 {
+  fill: url(#radial-gradient);
+}
+
+.st7 {
+  fill: url(#radial-gradient3);
+}
+
+.st8 {
+  fill: url(#radial-gradient2);
+}
+
+.st9 {
+  fill: url(#radial-gradient15);
+}
+
+.st10 {
+  fill: url(#radial-gradient18);
+}
+
+.st11 {
+  fill: url(#radial-gradient8);
+}
+
+.st12 {
+  fill: url(#radial-gradient1);
+}
+
+.st13 {
+  fill: url(#radial-gradient12);
+}
+
+.st14 {
+  fill: url(#radial-gradient10);
+}
+
+.st15 {
+  fill: url(#radial-gradient11);
+}
+
+.st16 {
+  fill: url(#radial-gradient7);
+}
+
+.st17 {
+  fill: url(#radial-gradient17);
+}
+
+.st18 {
+  fill: url(#radial-gradient14);
+}
+
+.container-map {
+  width: 100%;
+}
+
+#aus-svg {
+  max-width: 700px;
+  text-align: center;
+  margin: auto;
+}
+
+#aus-svg path {
+  fill: #a7bc40;
+  stroke: #687430;
+  stroke-width: 4px; 
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+#aus-svg path:hover {
+  transition: fill 0.4s; 
+  cursor: pointer;
+  fill: #f1b9b9;
+  stroke-width: 4px;
+}
+
+#VIC path:hover, #TAS path:hover {
+  fill: #a7bc40;
+  cursor: default;
+}
+
+/***** FOOTER *****/
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+
+  padding: 40px 0;
+  background-color: #fcffe1;
+}
+
+.footer ul {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.footer ul li a {
+  text-decoration: underline;
+}
+.footer ul li {
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.footer ul li a:hover {
+  opacity: 0.5;
+}
+
+.footer .copyright {
+  margin: 0 80px;
+  text-align: center;
+  font-size: 10px;
+  color: #000000;
+}
+
+.footer h1, .footer p {
+  text-align: center;
+}
+
+
+
+/* References
+CDNJS. n.d. “BezierPlugin.” CDNJS. Accessed 2024. https://cdnjs.com/libraries/BezierPlugin.
+
+CDNJS. n.d. “CSSPlugin” CDNJS. Accessed 2024. https://cdnjs.com/libraries/CSSPlugin.
+
+CDNJS. n.d. “Debug addIndicators” CDNJS. Accessed 2024. https://cdnjs.com/libraries/debug_addIndicators.
+
+CDNJS. n.d. “GSAP” CDNJS. Accessed 2024. https://cdnjs.com/libraries/gsap
+
+CDNJS. n.d. “ScrollMagic.” CDNJS. Accessed 2024. https://cdnjs.com/libraries/ScrollMagic.
+
+CDNJS. n.d. “addIndicators.” CDNJS. Accessed 2024. https://cdnjs.com/libraries/ScrollMagic.
+
+CDNJS. n.d. “TweenLite.” CDNJS. Accessed 2024. https://cdnjs.com/libraries/TweenLite.
+
+CDNJS. n.d. “TimelineLite.” CDNJS. Accessed 2024. https://cdnjs.com/libraries/TimelineLite.
+
+Connolly, Michael J. 2016. “The Rainbow Serpent.” Kullilla Art. 2016. https://www.kullillaart.com.au/dreamtime-stories/The-Rainbow-Serpent.
+Joe, Syd Bruce Short. 2019. “Rainbow Serpent Art from Pormpuraaw | Garland Magazine.” Garlandmag.com. May 30, 2019. https://garlandmag.com/article/pormpuraaw/.
+Lauren, Alejandro. n.d. Rainbow Serpent. Alejando Lauren. https://alejandrolauren.com/products/rainbow-serpent?_pos=1&_psq=serpent&_ss=e&_v=1.0.
+melbourne.atmospheres. 2021. “Freesound - Australian Birds in Rural Nature Reserve, Yarra Ranges, Victoria by Melbourne.atmospheres.” Freesound.org. 2021. https://freesound.org/people/melbourne.atmospheres/sounds/582918/.
+Pwerle, Selina Teece. n.d. My Father’s Country. Acrylic. Kate Owen Gallery. https://www.kateowengallery.com/artists/Sel392/Sel21597.htm.
+Shoelace. 2024. “Shoelace.” Shoelace.style. 2024. https://shoelace.style/.
+Tjungurrayi, George Ward. 2024. “Tingari - Karrkurritinytja (Lake MacDonald) - GWTHF0001 by George Ward Tjungurrayi.” Kateowengallery.com. 2024. https://www.kateowengallery.com/artists/Geo21/Geo12792.htm.
+
+
+Simple Maps. 2016. “Free Blank Australia Map in SVG - Resources | Simplemaps.com.” Simplemaps.com. 2016. https://simplemaps.com/svg/country/au.
+Ware, T’keyah. n.d. Rainbow Serpent. Painting. https://bluethumb.com.au/t-keyah-ware/Artwork/rainbow-serpent-496314.
+Yarinkura, Lena. 2024. “Ngalyod (Rainbow Serpent) 2004.” QAGOMA Collection Online. 2024. https://collection.qagoma.qld.gov.au/objects/14722. */
